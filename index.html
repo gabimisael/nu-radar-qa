@@ -315,19 +315,19 @@
   /* ── TRAINING ── */
   .training-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .training-card {
-    background: rgba(201,168,124,0.30);
+    background: rgba(183,110,121,0.18);
     border-radius: 14px;
     padding: 20px;
-    border: 1px solid rgba(220,185,130,0.5);
-    border-bottom-color: rgba(130,95,35,0.45);
-    border-right-color: rgba(130,95,35,0.45);
+    border: 1px solid rgba(220,170,178,0.5);
+    border-bottom-color: rgba(140,70,80,0.4);
+    border-right-color: rgba(140,70,80,0.4);
     border-left: 4px solid;
     box-shadow:
-      0 2px 0 rgba(240,210,160,0.45) inset,
-      0 1px 0 rgba(245,220,170,0.55) inset,
-      4px 8px 24px rgba(90,55,10,0.18),
-      2px 4px 8px rgba(90,55,10,0.12),
-      0 1px 2px rgba(90,55,10,0.08);
+      0 2px 0 rgba(245,210,215,0.5) inset,
+      0 1px 0 rgba(245,215,220,0.6) inset,
+      4px 8px 24px rgba(100,40,50,0.15),
+      2px 4px 8px rgba(100,40,50,0.10),
+      0 1px 2px rgba(100,40,50,0.06);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
   }
@@ -366,7 +366,7 @@
   /* ── TREND TABLE ── */
   .trend-table { width: 100%; border-collapse: collapse; font-size: 13px; }
   .trend-table th {
-    background: var(--nu);
+    background: #B76E79;
     color: #fff;
     padding: 10px 14px;
     text-align: left;
@@ -377,10 +377,10 @@
   }
   .trend-table td {
     padding: 11px 14px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(183,110,121,0.2);
     color: var(--dark);
   }
-  .trend-table tr:nth-child(even) td { background: var(--nu-bg); }
+  .trend-table tr:nth-child(even) td { background: rgba(183,110,121,0.1); }
   .trend-table tr:last-child td { font-weight: 700; }
   .trend-table .var-up   { color: var(--red); font-weight: 700; }
   .trend-table .var-neu  { color: var(--muted); }
