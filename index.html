@@ -139,11 +139,20 @@
     margin-bottom: 28px;
   }
   .kpi-card {
-    background: var(--surface);
+    background: rgba(201,168,124,0.30);
     border-radius: 16px;
     padding: 20px 22px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-bottom-color: rgba(180,140,80,0.3);
+    border-right-color: rgba(180,140,80,0.3);
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.7) inset,
+      0 1px 0 rgba(255,255,255,0.8) inset,
+      4px 8px 24px rgba(90,55,10,0.18),
+      2px 4px 8px rgba(90,55,10,0.12),
+      0 1px 2px rgba(90,55,10,0.08);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     position: relative;
     overflow: hidden;
     transition: box-shadow 0.2s;
@@ -246,16 +255,16 @@
   .priority-items.moderada{ border-color: var(--yellow); }
   .priority-item {
     padding: 14px 18px;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(180,140,80,0.15);
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 12px;
     align-items: start;
-    background: #fff;
+    background: rgba(201,168,124,0.18);
     transition: background 0.15s;
   }
   .priority-item:last-child { border-bottom: none; }
-  .priority-item:hover { background: #FAFAFA; }
+  .priority-item:hover { background: rgba(201,168,124,0.32); }
   .pi-name { font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 3px; }
   .pi-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
   .pi-badge {
@@ -278,10 +287,20 @@
   /* ── CAUSES ── */
   .cause-list { display: flex; flex-direction: column; gap: 10px; }
   .cause-item {
-    background: #fff;
+    background: rgba(201,168,124,0.30);
     border-radius: 12px;
     padding: 16px 20px;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-bottom-color: rgba(180,140,80,0.3);
+    border-right-color: rgba(180,140,80,0.3);
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.7) inset,
+      0 1px 0 rgba(255,255,255,0.8) inset,
+      4px 8px 24px rgba(90,55,10,0.18),
+      2px 4px 8px rgba(90,55,10,0.12),
+      0 1px 2px rgba(90,55,10,0.08);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     display: flex; align-items: flex-start; gap: 14px;
   }
   .cause-num {
@@ -296,12 +315,21 @@
   /* ── TRAINING ── */
   .training-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .training-card {
-    background: #fff;
+    background: rgba(201,168,124,0.30);
     border-radius: 14px;
     padding: 20px;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-bottom-color: rgba(180,140,80,0.3);
+    border-right-color: rgba(180,140,80,0.3);
     border-left: 4px solid;
-    box-shadow: var(--shadow);
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.7) inset,
+      0 1px 0 rgba(255,255,255,0.8) inset,
+      4px 8px 24px rgba(90,55,10,0.18),
+      2px 4px 8px rgba(90,55,10,0.12),
+      0 1px 2px rgba(90,55,10,0.08);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
   .training-card.urgente { border-left-color: var(--red); }
   .training-card.alta    { border-left-color: var(--orange); }
@@ -449,13 +477,22 @@
     margin-bottom: 28px;
   }
   .treinu-stat {
-    background: #fff;
+    background: rgba(201,168,124,0.30);
     border-radius: 14px;
     padding: 18px 20px;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-bottom-color: rgba(180,140,80,0.3);
+    border-right-color: rgba(180,140,80,0.3);
     border-top: 3px solid var(--nu);
     text-align: center;
-    box-shadow: var(--shadow);
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.7) inset,
+      0 1px 0 rgba(255,255,255,0.8) inset,
+      4px 8px 24px rgba(90,55,10,0.18),
+      2px 4px 8px rgba(90,55,10,0.12),
+      0 1px 2px rgba(90,55,10,0.08);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
   .treinu-stat .ts-val { font-size: 30px; font-weight: 800; color: var(--nu); }
   .treinu-stat .ts-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -467,10 +504,19 @@
     margin-bottom: 20px;
   }
   .module-card {
-    background: #fff;
+    background: rgba(201,168,124,0.30);
     border-radius: 16px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-bottom-color: rgba(180,140,80,0.3);
+    border-right-color: rgba(180,140,80,0.3);
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.7) inset,
+      0 1px 0 rgba(255,255,255,0.8) inset,
+      4px 8px 24px rgba(90,55,10,0.18),
+      2px 4px 8px rgba(90,55,10,0.12),
+      0 1px 2px rgba(90,55,10,0.08);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     overflow: hidden;
     transition: box-shadow 0.2s;
   }
