@@ -1577,7 +1577,7 @@ function initCharts() {
     },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom' } },
+      plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 20 } } },
       scales: {
         x: { grid: { display: false } },
         y: { grid: { color: '#F0EAF9' }, ticks: { stepSize: 1 } }
