@@ -1525,11 +1525,11 @@ function showSection(id, tab) {
 }
 
 // ── Palette ───────────────────────────────────────────────────────────────────
-const NU     = '#8200FF';
-const NU2    = '#A855F7';
-const RED    = '#E53935';
-const ORANGE = '#F57C00';
-const YELLOW = '#F9A825';
+const NU     = '#5C3317';   // espresso escuro
+const NU2    = '#C9A87C';   // Tan (faixa do título)
+const RED    = '#8B2A35';   // vinho escuro
+const ORANGE = '#7A4A20';   // âmbar escuro
+const YELLOW = '#9B7230';   // dourado escuro
 const GREEN  = '#2E7D32';
 const GRAY   = '#8888AA';
 
@@ -1575,10 +1575,10 @@ function initCharts() {
         label: 'Apontamentos Críticos',
         data: criticos,
         borderColor: RED,
-        backgroundColor: 'rgba(229,57,53,0.1)',
+        backgroundColor: 'rgba(139,42,53,0.1)',
         fill: true,
         tension: 0.4,
-        pointBackgroundColor: RED,
+        pointBackgroundColor: RED, pointBorderColor: RED,
         pointRadius: 5,
         borderWidth: 2.5
       }]
@@ -1877,7 +1877,7 @@ function renderFlow(fid) {
   const visChecks   = flow.steps.filter(s => s.type==='check' && isVisible(s,state));
   const doneChecks  = visChecks.filter(s => state['ck_'+s.id]);
   const pct         = visChecks.length ? Math.round(doneChecks.length/visChecks.length*100) : 0;
-  const barColor    = pct===100 ? '#2E7D32' : '#8200FF';
+  const barColor    = pct===100 ? '#2E7D32' : '#5C3317';
 
   let html = `
     <div class="cl-progress-wrap"><div class="cl-progress-fill" style="width:${pct}%;background:${barColor}"></div></div>
