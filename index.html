@@ -315,19 +315,19 @@
   /* ── TRAINING ── */
   .training-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .training-card {
-    background: rgba(183,110,121,0.18);
+    background: rgba(201,168,124,0.30);
     border-radius: 14px;
     padding: 20px;
-    border: 1px solid rgba(220,170,178,0.5);
-    border-bottom-color: rgba(140,70,80,0.4);
-    border-right-color: rgba(140,70,80,0.4);
+    border: 1px solid rgba(220,185,130,0.5);
+    border-bottom-color: rgba(130,95,35,0.45);
+    border-right-color: rgba(130,95,35,0.45);
     border-left: 4px solid;
     box-shadow:
-      0 2px 0 rgba(245,210,215,0.5) inset,
-      0 1px 0 rgba(245,215,220,0.6) inset,
-      4px 8px 24px rgba(100,40,50,0.15),
-      2px 4px 8px rgba(100,40,50,0.10),
-      0 1px 2px rgba(100,40,50,0.06);
+      0 2px 0 rgba(240,210,160,0.45) inset,
+      0 1px 0 rgba(245,220,170,0.55) inset,
+      4px 8px 24px rgba(90,55,10,0.18),
+      2px 4px 8px rgba(90,55,10,0.12),
+      0 1px 2px rgba(90,55,10,0.08);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
   }
@@ -347,20 +347,20 @@
   .training-row { display: flex; gap: 6px; margin-top: 6px; }
   .training-key { font-size: 11px; font-weight: 700; color: var(--muted); min-width: 68px; }
   .training-val { font-size: 11px; color: var(--mid); line-height: 1.4; }
-  .training-links { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; display: flex; flex-direction: column; gap: 5px; }
-  .training-links-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); margin-bottom: 3px; }
+  .training-links { margin-top: 12px; border-top: 1px solid rgba(183,110,121,0.25); padding-top: 10px; display: flex; flex-direction: column; gap: 5px; background: rgba(183,110,121,0.12); border-radius: 0 0 10px 10px; margin-left: -20px; margin-right: -20px; margin-bottom: -20px; padding: 10px 20px 14px; }
+  .training-links-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #8B3A47; margin-bottom: 3px; }
   .material-link {
     display: flex; align-items: center; gap: 6px;
-    font-size: 11px; font-weight: 500; color: var(--nu);
+    font-size: 11px; font-weight: 500; color: #8B3A47;
     text-decoration: none;
     padding: 5px 8px;
     border-radius: 6px;
-    background: var(--nu-bg);
+    background: rgba(183,110,121,0.15);
     transition: background 0.15s;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(183,110,121,0.3);
     word-break: break-word;
   }
-  .material-link:hover { background: #E2D5F5; text-decoration: underline; }
+  .material-link:hover { background: rgba(183,110,121,0.28); text-decoration: underline; }
   .material-link .link-icon { font-size: 13px; flex-shrink: 0; }
 
   /* ── TREND TABLE ── */
