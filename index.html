@@ -1525,11 +1525,11 @@ function showSection(id, tab) {
 }
 
 // ── Palette ───────────────────────────────────────────────────────────────────
-const NU     = '#5C3317';   // espresso escuro
-const NU2    = '#C9A87C';   // Tan (faixa do título)
-const RED    = '#8B2A35';   // vinho escuro
-const ORANGE = '#7A4A20';   // âmbar escuro
-const YELLOW = '#9B7230';   // dourado escuro
+const NU     = '#8200FF';
+const NU2    = '#A855F7';
+const RED    = '#E53935';
+const ORANGE = '#F57C00';
+const YELLOW = '#F9A825';
 const GREEN  = '#2E7D32';
 const GRAY   = '#8888AA';
 
@@ -1561,7 +1561,7 @@ function initCharts() {
       plugins: { legend: { position: 'bottom' } },
       scales: {
         x: { stacked: true, grid: { display: false } },
-        y: { stacked: true, grid: { color: '#F0EAF9' }, ticks: { stepSize: 5 } }
+        y: { stacked: true, grid: { color: 'rgba(180,140,80,0.35)' }, ticks: { stepSize: 5 } }
       }
     }
   });
@@ -1575,10 +1575,10 @@ function initCharts() {
         label: 'Apontamentos Críticos',
         data: criticos,
         borderColor: RED,
-        backgroundColor: 'rgba(139,42,53,0.1)',
+        backgroundColor: 'rgba(229,57,53,0.1)',
         fill: true,
         tension: 0.4,
-        pointBackgroundColor: RED, pointBorderColor: RED,
+        pointBackgroundColor: RED,
         pointRadius: 5,
         borderWidth: 2.5
       }]
@@ -1588,7 +1588,7 @@ function initCharts() {
       plugins: { legend: { display: false } },
       scales: {
         x: { grid: { display: false } },
-        y: { grid: { color: '#F0EAF9' }, ticks: { stepSize: 2 } }
+        y: { grid: { color: 'rgba(180,140,80,0.35)' }, ticks: { stepSize: 2 } }
       }
     }
   });
@@ -1625,7 +1625,7 @@ function initCharts() {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        x: { grid: { color: '#F0EAF9' }, ticks: { stepSize: 1 } },
+        x: { grid: { color: 'rgba(180,140,80,0.35)' }, ticks: { stepSize: 1 } },
         y: { grid: { display: false }, ticks: { font: { size: 11 } } }
       }
     }
@@ -1665,7 +1665,7 @@ function initCharts() {
       plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 20 } } },
       scales: {
         x: { grid: { display: false } },
-        y: { grid: { color: '#F0EAF9' }, ticks: { stepSize: 1 } }
+        y: { grid: { color: 'rgba(180,140,80,0.35)' }, ticks: { stepSize: 1 } }
       }
     }
   });
@@ -1877,7 +1877,7 @@ function renderFlow(fid) {
   const visChecks   = flow.steps.filter(s => s.type==='check' && isVisible(s,state));
   const doneChecks  = visChecks.filter(s => state['ck_'+s.id]);
   const pct         = visChecks.length ? Math.round(doneChecks.length/visChecks.length*100) : 0;
-  const barColor    = pct===100 ? '#2E7D32' : '#5C3317';
+  const barColor    = pct===100 ? '#2E7D32' : '#8200FF';
 
   let html = `
     <div class="cl-progress-wrap"><div class="cl-progress-fill" style="width:${pct}%;background:${barColor}"></div></div>
