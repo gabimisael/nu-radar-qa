@@ -829,11 +829,11 @@
     background: #E8E87A;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    text-align: center;
-    padding: 40px;
+    padding: 40px 44px;
     overflow: hidden;
+    border: 1px solid rgba(130,0,255,0.15);
     transition: opacity 0.5s ease, visibility 0.5s ease;
   }
   #splash.hidden {
@@ -841,95 +841,107 @@
     visibility: hidden;
     pointer-events: none;
   }
+  /* Grid tech em roxo */
   #splash::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(0,0,0,0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,0.07) 1px, transparent 1px);
+      linear-gradient(rgba(130,0,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(130,0,255,0.08) 1px, transparent 1px);
     background-size: 44px 44px;
     pointer-events: none;
   }
-  .nu-glow {
+  /* Dois glows */
+  .nu-glow1 {
     position: absolute;
-    width: 420px; height: 420px;
+    width: 260px; height: 260px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(130,0,255,0.18) 0%, transparent 68%);
-    top: -100px; right: -100px;
+    background: radial-gradient(circle, rgba(130,0,255,0.18), transparent 70%);
+    top: -60px; right: 60px;
     pointer-events: none;
   }
+  .nu-glow2 {
+    position: absolute;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(130,0,255,0.12), transparent 70%);
+    bottom: -30px; right: -20px;
+    pointer-events: none;
+  }
+  /* Formas flutuantes — posições exatas do template */
   .nu-sq {
     position: absolute;
-    border-radius: 14px;
+    border-radius: 10px;
     pointer-events: none;
   }
-  .nu-sq1 { width: 150px; height: 150px; top: -35px; right: 90px; background: rgba(130,0,255,0.12); border: 1px solid rgba(130,0,255,0.28); transform: rotate(18deg); }
-  .nu-sq2 { width: 88px; height: 88px; top: 70px; right: 28px; background: rgba(130,0,255,0.08); border: 1px solid rgba(130,0,255,0.22); transform: rotate(-8deg); }
-  .nu-sq3 { width: 210px; height: 210px; bottom: -70px; left: -55px; background: rgba(130,0,255,0.07); border: 1px solid rgba(130,0,255,0.18); transform: rotate(30deg); }
-  .nu-sq4 { width: 66px; height: 66px; bottom: 110px; right: 130px; background: #8200FF; border: none; border-radius: 16px; display: flex; align-items: center; justify-content: center; overflow: hidden; transform: rotate(-5deg); box-shadow: 0 8px 28px rgba(130,0,255,0.45); z-index: 1; }
+  .nu-sq1 { width: 90px; height: 90px; border: 1.5px solid rgba(130,0,255,0.3); top: 28px; right: 150px; transform: rotate(14deg); }
+  .nu-sq2 { width: 55px; height: 55px; background: rgba(130,0,255,0.12); border: 1px solid rgba(130,0,255,0.2); top: 80px; right: 58px; transform: rotate(-6deg); }
+  .nu-sq3 { width: 120px; height: 70px; border: 1px solid rgba(130,0,255,0.18); bottom: 44px; right: 110px; transform: rotate(5deg); }
+  .nu-sq4 { width: 44px; height: 44px; background: #8200FF; border-radius: 10px; bottom: 44px; right: 44px; display: flex; align-items: center; justify-content: center; overflow: hidden; z-index: 1; }
+  /* Tag */
   .splash-tag {
-    background: rgba(0,0,0,0.08);
-    border: 1px solid rgba(0,0,0,0.14);
-    border-radius: 20px;
-    padding: 5px 18px;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
-    color: rgba(0,0,0,0.55);
-    letter-spacing: 0.6px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    letter-spacing: 0.8px;
+    color: #8200FF;
+    background: rgba(130,0,255,0.1);
+    border: 1px solid rgba(130,0,255,0.2);
+    border-radius: 20px;
+    padding: 4px 14px;
+    margin-bottom: 14px;
     position: relative;
+    display: inline-block;
     z-index: 1;
   }
   .splash-title {
     font-family: 'Nu Display', 'Nu Sans', 'Segoe UI', sans-serif;
-    font-size: 52px;
+    font-size: 42px;
     font-weight: 900;
-    color: #1A0040;
-    letter-spacing: -1px;
-    line-height: 1.1;
-    margin-bottom: 16px;
+    color: #1A0066;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin-bottom: 12px;
     position: relative;
     z-index: 1;
   }
   .splash-title span { color: #8200FF; }
   .splash-desc {
-    font-size: 15px;
-    color: rgba(0,0,0,0.52);
-    line-height: 1.7;
-    max-width: 480px;
-    margin-bottom: 36px;
+    font-size: 13px;
+    color: rgba(26,0,102,0.65);
+    line-height: 1.6;
+    max-width: 320px;
+    margin-bottom: 24px;
     position: relative;
     z-index: 1;
   }
   .splash-btn {
     background: #8200FF;
-    color: #FFFFFF;
+    color: #fff;
     border: none;
     border-radius: 50px;
-    padding: 14px 36px;
-    font-size: 14px;
+    padding: 12px 28px;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
     position: relative;
     z-index: 1;
     font-family: 'Nu Sans', 'Segoe UI', sans-serif;
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    letter-spacing: 0.2px;
-    box-shadow: 0 4px 20px rgba(130,0,255,0.4);
+    transition: background 0.2s, transform 0.15s;
   }
-  .splash-btn:hover { background: #6600CC; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(130,0,255,0.5); }
+  .splash-btn:hover { background: #6600CC; }
   .splash-btn i { font-size: 16px; }
   .splash-meta {
     position: absolute;
-    bottom: 28px;
+    bottom: 22px;
+    left: 44px;
     font-size: 11px;
-    color: rgba(0,0,0,0.32);
-    font-weight: 500;
+    color: rgba(26,0,102,0.4);
+    font-weight: 600;
     letter-spacing: 0.3px;
     z-index: 1;
   }
@@ -939,19 +951,20 @@
 
 <!-- ══════════════════ SPLASH SCREEN ══════════════════ -->
 <div id="splash">
-  <div class="nu-glow"></div>
+  <div class="nu-glow1"></div>
+  <div class="nu-glow2"></div>
   <div class="nu-sq nu-sq1"></div>
   <div class="nu-sq nu-sq2"></div>
   <div class="nu-sq nu-sq3"></div>
-  <div class="nu-sq nu-sq4"><img id="splash-logo" alt="nu" style="width:44px;height:auto;"></div>
+  <div class="nu-sq nu-sq4"><img id="splash-logo" alt="nu" style="width:36px;height:auto;"></div>
   <span class="splash-tag">Nubank · Qualidade de Atendimento</span>
-  <h1 class="splash-title">Nu Radar <span>da QA</span></h1>
-  <p class="splash-desc">Monitoramento contínuo da qualidade operacional do atendimento. Apontamentos, tendências e recomendações em tempo real para a liderança.</p>
+  <h1 class="splash-title">Nu Radar<br><span>da QA</span></h1>
+  <p class="splash-desc">Monitoramento contínuo da qualidade operacional do atendimento. Insights para a liderança.</p>
   <button class="splash-btn" onclick="entrarDashboard()">
     <i class="ti ti-arrow-right" aria-hidden="true"></i>
     Acessar Dashboard
   </button>
-  <span class="splash-meta">W18 · Atualizado em Junho 2026</span>
+  <span class="splash-meta">W18 · Junho 2026</span>
 </div>
 
 <header>
