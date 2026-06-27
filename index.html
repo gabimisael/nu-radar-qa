@@ -826,13 +826,14 @@
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: #F5F0EB;
+    background: #E8E87A;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 40px;
+    overflow: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
   }
   #splash.hidden {
@@ -840,50 +841,71 @@
     visibility: hidden;
     pointer-events: none;
   }
-  .splash-ring {
+  #splash::before {
+    content: '';
     position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(201,168,124,0.2);
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.07) 1px, transparent 1px);
+    background-size: 44px 44px;
     pointer-events: none;
   }
-  .splash-ring-1 { width: 500px; height: 500px; top: -180px; right: -180px; }
-  .splash-ring-2 { width: 320px; height: 320px; top: -100px; right: -100px; }
-  .splash-ring-3 { width: 400px; height: 400px; bottom: -150px; left: -150px; border-color: rgba(201,168,124,0.12); }
+  .nu-glow {
+    position: absolute;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(130,0,255,0.18) 0%, transparent 68%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .nu-sq {
+    position: absolute;
+    border-radius: 14px;
+    pointer-events: none;
+  }
+  .nu-sq1 { width: 150px; height: 150px; top: -35px; right: 90px; background: rgba(130,0,255,0.12); border: 1px solid rgba(130,0,255,0.28); transform: rotate(18deg); }
+  .nu-sq2 { width: 88px; height: 88px; top: 70px; right: 28px; background: rgba(130,0,255,0.08); border: 1px solid rgba(130,0,255,0.22); transform: rotate(-8deg); }
+  .nu-sq3 { width: 210px; height: 210px; bottom: -70px; left: -55px; background: rgba(130,0,255,0.07); border: 1px solid rgba(130,0,255,0.18); transform: rotate(30deg); }
+  .nu-sq4 { width: 66px; height: 66px; bottom: 110px; right: 130px; background: #8200FF; border: none; border-radius: 16px; display: flex; align-items: center; justify-content: center; overflow: hidden; transform: rotate(-5deg); box-shadow: 0 8px 28px rgba(130,0,255,0.45); z-index: 1; }
   .splash-tag {
-    background: rgba(201,168,124,0.25);
-    border: 1px solid rgba(180,140,80,0.35);
+    background: rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.14);
     border-radius: 20px;
     padding: 5px 18px;
     font-size: 11px;
     font-weight: 700;
-    color: #5C3317;
+    color: rgba(0,0,0,0.55);
     letter-spacing: 0.6px;
     text-transform: uppercase;
     margin-bottom: 20px;
     position: relative;
+    z-index: 1;
   }
   .splash-title {
     font-family: 'Nu Display', 'Nu Sans', 'Segoe UI', sans-serif;
-    font-size: 48px;
+    font-size: 52px;
     font-weight: 900;
-    color: #2D1600;
+    color: #1A0040;
     letter-spacing: -1px;
     line-height: 1.1;
     margin-bottom: 16px;
     position: relative;
+    z-index: 1;
   }
-  .splash-title span { color: #C9A87C; }
+  .splash-title span { color: #8200FF; }
   .splash-desc {
     font-size: 15px;
-    color: #7A5530;
+    color: rgba(0,0,0,0.52);
     line-height: 1.7;
     max-width: 480px;
     margin-bottom: 36px;
     position: relative;
+    z-index: 1;
   }
   .splash-btn {
-    background: #2D1600;
-    color: #F5F0EB;
+    background: #8200FF;
+    color: #FFFFFF;
     border: none;
     border-radius: 50px;
     padding: 14px 36px;
@@ -894,19 +916,22 @@
     align-items: center;
     gap: 10px;
     position: relative;
+    z-index: 1;
     font-family: 'Nu Sans', 'Segoe UI', sans-serif;
-    transition: background 0.2s, transform 0.15s;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
     letter-spacing: 0.2px;
+    box-shadow: 0 4px 20px rgba(130,0,255,0.4);
   }
-  .splash-btn:hover { background: #5C3317; transform: translateY(-1px); }
+  .splash-btn:hover { background: #6600CC; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(130,0,255,0.5); }
   .splash-btn i { font-size: 16px; }
   .splash-meta {
     position: absolute;
     bottom: 28px;
     font-size: 11px;
-    color: rgba(90,55,10,0.4);
+    color: rgba(0,0,0,0.32);
     font-weight: 500;
     letter-spacing: 0.3px;
+    z-index: 1;
   }
 </style>
 </head>
@@ -914,9 +939,11 @@
 
 <!-- ══════════════════ SPLASH SCREEN ══════════════════ -->
 <div id="splash">
-  <div class="splash-ring splash-ring-1"></div>
-  <div class="splash-ring splash-ring-2"></div>
-  <div class="splash-ring splash-ring-3"></div>
+  <div class="nu-glow"></div>
+  <div class="nu-sq nu-sq1"></div>
+  <div class="nu-sq nu-sq2"></div>
+  <div class="nu-sq nu-sq3"></div>
+  <div class="nu-sq nu-sq4"><img id="splash-logo" alt="nu" style="width:44px;height:auto;"></div>
   <span class="splash-tag">Nubank · Qualidade de Atendimento</span>
   <h1 class="splash-title">Nu Radar <span>da QA</span></h1>
   <p class="splash-desc">Monitoramento contínuo da qualidade operacional do atendimento. Apontamentos, tendências e recomendações em tempo real para a liderança.</p>
@@ -1626,6 +1653,13 @@
 
 <script>
 // ── Navigation ────────────────────────────────────────────────────────────────
+// Copy header logo into splash square
+document.addEventListener('DOMContentLoaded', function() {
+  var headerImg = document.querySelector('header img');
+  var splashLogo = document.getElementById('splash-logo');
+  if (headerImg && splashLogo) splashLogo.src = headerImg.src;
+});
+
 function entrarDashboard() {
   document.getElementById('splash').classList.add('hidden');
 }
